@@ -1,0 +1,9 @@
+---
+
+- name: Download the Docker debian package
+  get_url: url={{ docker_deb_base_url }}/{{ docker_deb }}
+           dest=/root/{{ docker_deb }}
+           sha256sum={{ docker_deb_checksum }}
+
+- name: Install Docker
+  apt: deb=/root/{{ docker_deb }}

@@ -1,0 +1,5 @@
+---
+
+docker_deb: ~
+docker_deb_base_url: ~
+docker_deb_checksum: ~
