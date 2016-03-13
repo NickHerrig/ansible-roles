@@ -1,0 +1,4 @@
+hostapd_config: {}
+#  interface: wlan0
+#  driver: nl80211
+#  ...
