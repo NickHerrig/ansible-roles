@@ -1,0 +1,12 @@
+---
+
+- name: "Create rules file"
+  file: path=/etc/udev/rules.d/{{ item.file }}.rules state=touch
+  with_items: '{{ udev_rules }}'
+
+- name: "Add rules"
+  blockinfile:
+    dest: '/etc/udev/rules.d/{{ item.file }}.rules'
+    block: '{{ item.rules }}'
+  with_items: '{{ udev_rules }}'
+  notify: "Reload udev rules"
