@@ -1,5 +1,4 @@
-dnsmasq_config: []
-#  - name: interface
-#    value: wlan0
-#  - name bind-interfaces
+dnsmasq_options: []
+#  - [interface, wlan0]
+#  - [bind-interfaces]
 #  - ...

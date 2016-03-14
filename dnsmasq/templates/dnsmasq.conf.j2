@@ -1,4 +1,4 @@
 {% for option in dnsmasq_options %}
-{{ option.name }}{% if option.value is defined %}={{ option.value }}{% endif %}
+{{ option.0 }}{% if option.1 is defined %}={{ option.1 }}{% endif %}
 
 {% endfor %}
