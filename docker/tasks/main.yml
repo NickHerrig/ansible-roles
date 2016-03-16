@@ -2,8 +2,14 @@
 
 - name: Download the Docker debian package
   get_url: url={{ docker_deb_base_url }}/{{ docker_deb }}
-           dest=/root/{{ docker_deb }}
+           dest=/root/docker.deb
            sha256sum={{ docker_deb_checksum }}
+  register: docker_download_result
 
 - name: Install Docker
-  apt: deb=/root/{{ docker_deb }}
+  apt: deb=/root/docker.deb
+  when: docker_download_result|changed
+
+- name: "Create daemon configuration file"
+  template: src=daemon.json.j2 dest=/etc/docker/daemon.json mode=0644
+  notify: ["Restart docker"]

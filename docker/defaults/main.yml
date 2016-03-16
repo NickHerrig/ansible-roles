@@ -3,3 +3,7 @@
 docker_deb: ~
 docker_deb_base_url: ~
 docker_deb_checksum: ~
+docker_daemon_config: {}
+#    ip: "0.0.0.0"
+#    iptables: false
+#    ...
